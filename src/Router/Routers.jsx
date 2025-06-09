@@ -1,6 +1,9 @@
 import { createBrowserRouter } from "react-router";
 import MainLayout from "../Layouts/MainLayout";
 import Home from "../Components/Home/Home";
+import Login from "../Page/Login";
+import Register from "../Page/Register";
+import PageNotFound from "../Page/PageNotFound";
 
 const Routers = createBrowserRouter([
   // Main layout with navbar & footer
@@ -60,18 +63,18 @@ const Routers = createBrowserRouter([
   },
 
   // Routes without Navbar/Footer
-//   {
-//     path: "/login",
-//     element: <Login />,
-//   },
-//   {
-//     path: "/register",
-//     element: <Register />,
-//   },
-//   {
-//     path: "*",
-//     element: <PageNotFound />,
-//   },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "*",
+    element: <PageNotFound />,
+  },
 ]);
 
 export default Routers;
