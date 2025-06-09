@@ -1,12 +1,69 @@
-# React + Vite
+# 📘 EduVerse – A Knowledge Sharing Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Site:** [https://eduverse.web.app](https://eduverse.web.app)
 
-Currently, two official plugins are available:
+## 🧠 Project Purpose
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+EduVerse is a knowledge-sharing platform built for students to share articles, ideas, and insights on various topics. Inspired by platforms like Dev.to, it allows users to write, edit, and engage in discussions through comments. The project focuses on responsiveness, clean UI/UX, and secure user interaction using modern technologies.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Live Preview
+
+🌐 **Live URL:** [https://eduverse.web.app](https://eduverse.web.app)
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend:** React.js, Tailwind CSS, DaisyUI, React Router
+- **Backend:** Node.js, Express.js, MongoDB
+- **Authentication:** Firebase Auth (Email/Password, Google)
+- **Security:** JWT Token for protected routes
+- **Hosting:** Vercel (client), Render or Railway (server), Firebase (auth)
+- **Others:** Axios, dotenv, Jodit React Editor, Toastify, AOS
+
+---
+
+## ✨ Key Features
+
+- 🔍 Browse all articles (without login)
+- ✏️ Authenticated users can post, edit & delete their own articles
+- 💬 Comment & like feature on articles
+- 🔐 Firebase-based login with JWT token security
+- 📚 Category-wise filtering for articles
+- 🌙 Light/Dark theme toggle
+- 📱 Fully responsive on all devices
+- 🔄 Update & Delete from “My Articles” page
+- ❌ Custom 404 Error Page
+
+---
+
+
+## 📦 NPM Packages Used
+
+- react-router
+- firebase
+- axios
+- jsonwebtoken
+- react-hot-toast
+- daisyui
+- tailwindcss
+- framer-motion / AOS
+- jodit-react
+
+---
+
+## 👨‍💻 Author
+
+Developed by **[Jannatul Lima]**  
+For **Assignment 11** – *Category: assignment_category_18*
+
+---
+
+## 📄 License
+
+This project is for educational purposes only. All rights reserved © 2025.
+
+
+
