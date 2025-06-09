@@ -4,6 +4,7 @@ import Home from "../Components/Home/Home";
 import Login from "../Page/Login";
 import Register from "../Page/Register";
 import PageNotFound from "../Page/PageNotFound";
+import About from "../Page/about";
 
 const Routers = createBrowserRouter([
   // Main layout with navbar & footer
@@ -59,6 +60,10 @@ const Routers = createBrowserRouter([
     //       </PrivateRoute>,
     //       loader: ({params}) => fetch(`https://job-nest-server-nu.vercel.app/applications/job/${params.job_id}`)
     //   },
+        {
+            path: "/about",
+            element: <About/>
+        }
     ],
   },
 
