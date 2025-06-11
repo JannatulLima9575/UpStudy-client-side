@@ -1,4 +1,4 @@
-# 📘 EduVerse – A Knowledge Sharing Platform
+# 📘 UpStudy – A Knowledge Sharing Platform
 
 **Live Site:** [https://eduverse.web.app](https://eduverse.web.app)
 

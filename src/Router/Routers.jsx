@@ -5,6 +5,7 @@ import Login from "../Page/Login";
 import Register from "../Page/Register";
 import PageNotFound from "../Page/PageNotFound";
 import About from "../Page/about";
+import CategoryArticles from "../Components/Outlet/CategoryArticles";
 
 const Routers = createBrowserRouter([
   // Main layout with navbar & footer
@@ -64,7 +65,10 @@ const Routers = createBrowserRouter([
             path: "/about",
             element: <About/>
         },
-      
+      {
+        path:"/category/:categoryName",
+        element: <CategoryArticles />,
+      }
     ],
   },
 

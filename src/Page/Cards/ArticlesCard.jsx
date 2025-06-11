@@ -1,24 +1,23 @@
-import React from 'react';
+import React from "react";
 
 const ArticlesCard = ({ article }) => {
   const {
     _id,
     title,
     content,
-    category,
     author_name,
     author_photo,
     thumbnail,
-    createdAt
+    createdAt,
   } = article;
 
   return (
     <div className="bg-base-100 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
       {/* Article Thumbnail */}
       <img
-        src={thumbnail || 'https://i.ibb.co/YyW9qfY/default-thumbnail.jpg'}
+        src={thumbnail || "https://i.ibb.co/YyW9qfY/default-thumbnail.jpg"}
         alt={title}
-        className="w-full h-48 object-cover"
+        className="w-full h-48 object-cover rounded-lg mb-4"
       />
 
       {/* Article Content */}
@@ -34,7 +33,7 @@ const ArticlesCard = ({ article }) => {
         <div className="flex items-center justify-between text-sm mt-auto">
           <div className="flex items-center gap-2">
             <img
-              src={author_photo || 'https://i.ibb.co/YyW9qfY/default-user.png'}
+              src={author_photo || "https://i.ibb.co/YyW9qfY/default-user.png"}
               alt={author_name}
               className="w-8 h-8 rounded-full object-cover"
             />

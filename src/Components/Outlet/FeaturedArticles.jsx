@@ -25,7 +25,7 @@ const FeaturedArticles = () => {
       <h2 className="text-3xl font-bold mb-4 text-center">
         📌 Featured Articles
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:p-0 p-3">
         {articles.map((article) => (
           <ArticlesCard key={article._id} article={article} />
         ))}
