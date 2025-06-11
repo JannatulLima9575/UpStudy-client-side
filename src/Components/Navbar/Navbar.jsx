@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import { useState, useEffect } from "react";
+import NavbarLogo from "../../assets/logo.png";
 
 const Navbar = () => {
   const { user, signOutUser } = useAuth();
@@ -29,8 +30,8 @@ const Navbar = () => {
     <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl rounded-full backdrop-blur-md bg-white/70 dark:bg-black/60 shadow-md border border-gray-200 dark:border-gray-700">
       <div className="px-4 py-3 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold text-primary">
-          Edu<span className="text-accent">Verse</span>
+        <Link to="/" className="text-2xl font-bold bg-black rounded-xl p-1">
+          <img src={NavbarLogo} />
         </Link>
 
         {/* Desktop Nav */}
