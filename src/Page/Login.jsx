@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useLocation, useNavigate } from "react-router";
 import Lottie from "lottie-react";
+import Swal from "sweetalert2";
 import lottieImage from "../assets/lottiefiles/Login.json";
 import { AuthContext } from "./../Contexts/AuthContext";
 import SocialLogin from "./SocialLogin";
@@ -9,22 +10,35 @@ const Login = () => {
   const { signInUser } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
-  const from = location.state || "/";
+  const from = location.state?.from?.pathname || "/"; // safer path fallback
 
-  const handleSignIn = (e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
 
-    signInUser(email, password)
-      .then((result) => {
-        console.log(result.user);
-        navigate(from);
-      })
-      .catch((error) => {
-        console.error(error);
+    try {
+      const result = await signInUser(email, password);
+      console.log(result.user);
+
+      // SweetAlert success message
+      await Swal.fire({
+        icon: "success",
+        title: "Welcome!",
+        text: `Hello ${result.user.displayName || result.user.email}, you are logged in!`,
+        timer: 2000,
+        showConfirmButton: false,
       });
+
+      navigate(from, { replace: true });
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Login Failed",
+        text: error.message,
+      });
+    }
   };
 
   return (

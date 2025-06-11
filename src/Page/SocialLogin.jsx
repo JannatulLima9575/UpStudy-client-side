@@ -1,20 +1,33 @@
-import React, { use } from "react";
+import React, { useContext } from "react";
 import { useNavigate } from 'react-router';
+import Swal from "sweetalert2";
 import { AuthContext } from "../Contexts/AuthContext";
 
 const SocialLogin = ({ form }) => {
-  const { signInWithGoogle } = use(AuthContext);
+  const { signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleGoogleSignIn = () => {
-    signInWithGoogle()
-      .then(result => {
-        console.log(result);
-        navigate(form || '/');
-      })
-      .catch(error => {
-        console.log(error);
+  const handleGoogleSignIn = async () => {
+    try {
+      const result = await signInWithGoogle();
+      console.log(result);
+
+      await Swal.fire({
+        icon: "success",
+        title: "Welcome!",
+        text: `Hello ${result.user.displayName || result.user.email}, you are logged in!`,
+        timer: 2000,
+        showConfirmButton: false,
       });
+
+      navigate(form || '/', { replace: true });
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Login Failed",
+        text: error.message,
+      });
+    }
   };
 
   return (
