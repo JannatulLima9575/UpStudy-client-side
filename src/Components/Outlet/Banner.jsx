@@ -23,37 +23,9 @@ const Banner = () => {
       }}
     >
       {/* Decorative Lottie Animations */}
-
-      {/* Top Left */}
-      <div className="hidden lg:block absolute top-20 mt-20 left-16 w-40 opacity-80">
-        <Lottie animationData={py} loop={true} />
-      </div>
-
-      <div className="hidden lg:block absolute mt-40 left-16 w-40 opacity-80">
-        <Lottie animationData={physics} loop={true} />
-      </div>
-
       {/* Bottom Left */}
       <div className="hidden lg:block absolute bottom-20 left-32 w-36 opacity-70">
         <Lottie animationData={hero1} loop={true} />
-      </div>
-      <div className="hidden lg:block absolute bottom-10 w-36 opacity-70">
-        <Lottie animationData={hero2} loop={true} />
-      </div>
-
-      {/* Top Right */}
-      <div className="hidden lg:block absolute top-12 pt-20 right-16 w-32 opacity-75">
-        <Lottie animationData={chemistry} loop={true} />
-      </div>
-
-      {/* Center Right */}
-      <div className="hidden lg:block absolute right-16 top-3/5 mr-60 mt-[16%]  transform -translate-y-2/3 w-44 opacity-80">
-        <Lottie animationData={hero2} loop={true} />
-      </div>
-
-      {/* Bottom Right */}
-      <div className="hidden lg:block absolute mb-[5%] right-32 w-36 opacity-70">
-        <Lottie animationData={physics} loop={true} />
       </div>
 
       {/* Main Content */}
