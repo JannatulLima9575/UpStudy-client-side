@@ -13,7 +13,8 @@ const CategoryArticles = () => {
   }, [categoryName]);
 
   return (
-    <div className="my-8">
+    <div className="my-8 pt-28 max-w-7xl mx-auto">
+      <div className="">
       <h2 className="text-2xl font-bold mb-6">
         Articles in "{categoryName}" Category
       </h2>
@@ -21,6 +22,7 @@ const CategoryArticles = () => {
         {articles.map(article => (
           <ArticlesCard key={article._id} article={article} />
         ))}
+      </div>
       </div>
     </div>
   );

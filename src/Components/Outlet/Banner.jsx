@@ -3,10 +3,6 @@ import Lottie from "lottie-react";
 import { motion } from "framer-motion";
 
 import hero1 from "../../assets/lottiefiles/hero1.json";
-import hero2 from "../../assets/lottiefiles/hero2.json";
-import physics from "../../assets/lottiefiles/physics.json";
-import chemistry from "../../assets/lottiefiles/chemistry.json";
-import py from "../../assets/lottiefiles/py.json";
 import bg from "../../assets/bg.avif";
 
 const Banner = () => {
