@@ -1,16 +1,17 @@
 import React, { useContext } from "react";
 import { useLocation, useNavigate } from "react-router";
+import { Link } from "react-router";
 import Lottie from "lottie-react";
 import Swal from "sweetalert2";
 import lottieImage from "../assets/lottiefiles/Login.json";
-import { AuthContext } from "./../Contexts/AuthContext";
+import { AuthContext } from "../Contexts/AuthContext";
 import SocialLogin from "./SocialLogin";
 
 const Login = () => {
   const { signInUser } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
-  const from = location.state?.from?.pathname || "/"; // safer path fallback
+  const from = location.state?.from?.pathname || "/";
 
   const handleSignIn = async (e) => {
     e.preventDefault();
@@ -22,11 +23,12 @@ const Login = () => {
       const result = await signInUser(email, password);
       console.log(result.user);
 
-      // SweetAlert success message
       await Swal.fire({
         icon: "success",
         title: "Welcome!",
-        text: `Hello ${result.user.displayName || result.user.email}, you are logged in!`,
+        text: `Hello ${
+          result.user.displayName || result.user.email
+        }, you are logged in!`,
         timer: 2000,
         showConfirmButton: false,
       });
@@ -84,10 +86,14 @@ const Login = () => {
               </div>
 
               <div className="text-sm text-right">
-                <a className="link link-hover">Forgot password?</a>
+                <a
+                  href="/forgot-password"
+                  className="link link-hover text-primary"
+                >
+                  Forgot password?
+                </a>
               </div>
 
-              {/* Centered Sign In Button */}
               <div className="flex justify-center">
                 <button className="btn btn-primary w-full max-w-[250px]">
                   Sign In
@@ -95,18 +101,16 @@ const Login = () => {
               </div>
             </form>
 
-            {/* Social Login below */}
             <SocialLogin />
 
-            {/* Optional register link */}
             <p className="text-center mt-4 text-sm">
               Don’t have an account?{" "}
-              <a
-                href="/register"
+              <Link
+                to="/register"
                 className="text-primary font-semibold link link-hover"
               >
                 Register
-              </a>
+              </Link>
             </p>
           </div>
         </div>

@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [theme, setTheme] = useState("light");
 
-  // Load theme from localStorage
+  // Load saved theme
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
     setTheme(savedTheme);
@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className="px-4 py-3 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold bg-black rounded-xl p-1">
-          <img src={NavbarLogo} />
+          <img src={NavbarLogo} alt="EduVerse Logo" className="h-10" />
         </Link>
 
         {/* Desktop Nav */}
@@ -41,7 +41,11 @@ const Navbar = () => {
           <Link to="/about" className="hover:text-primary font-semibold">About</Link>
 
           {/* Theme Toggle */}
-          <button onClick={toggleTheme} className="btn btn-sm  w-8 rounded-full">
+          <button
+            onClick={toggleTheme}
+            className="btn btn-sm w-8 rounded-full tooltip"
+            data-tip={theme === "light" ? "Dark Mode" : "Light Mode"}
+          >
             {theme === "light" ? "🌙" : "☀️"}
           </button>
 
@@ -49,7 +53,10 @@ const Navbar = () => {
             <div className="dropdown dropdown-end">
               <div tabIndex={0} role="button" className="btn btn-circle avatar">
                 <div className="w-9 rounded-full">
-                  <img src={user.photoURL || "https://i.ibb.co/zf4Bxpw/avatar.png"} alt="User" />
+                  <img
+                    src={user.photoURL || "https://i.ibb.co/zf4Bxpw/avatar.png"}
+                    alt={user.displayName || "User"}
+                  />
                 </div>
               </div>
               <ul className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-3 z-[1]">
@@ -66,12 +73,20 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Nav Toggle */}
         <div className="lg:hidden flex items-center gap-2">
-          <button onClick={toggleTheme} className="btn btn-ghost btn-sm">
+          <button
+            onClick={toggleTheme}
+            className="btn btn-ghost btn-sm tooltip"
+            data-tip={theme === "light" ? "Dark Mode" : "Light Mode"}
+          >
             {theme === "light" ? "🌙" : "☀️"}
           </button>
-          <button onClick={() => setIsOpen(!isOpen)} className="btn btn-ghost btn-circle">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="btn btn-ghost btn-circle"
+            aria-label="Toggle Menu"
+          >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {isOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -83,7 +98,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Nav */}
       {isOpen && (
         <div className="lg:hidden px-4 pb-4">
           <div className="flex flex-col gap-2">
