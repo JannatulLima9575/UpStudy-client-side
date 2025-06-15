@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 const AllArticles = () => {
   const [articles, setArticles] = useState([]);
@@ -40,7 +41,9 @@ const AllArticles = () => {
             <p className="text-gray-600 mb-3">
               {article.content.slice(0, 100)}...
             </p>
-            <button className="btn btn-sm btn-primary">Read More</button>
+            <Link to={`/articles/${article._id}`}>
+              <button className="btn btn-sm btn-primary">Read More</button>
+            </Link>
           </div>
         ))}
       </div>
