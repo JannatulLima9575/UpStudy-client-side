@@ -18,7 +18,7 @@ const PostArticle = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:3000/api/articles", {
+      const res = await fetch("https://up-study-server-side.vercel.app/api/articles", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -14,7 +14,7 @@ const CommentForm = ({ articleId, onCommentAdded }) => {
       commentText,
     };
 
-    const res = await fetch("http://localhost:3000/api/comments", {
+    const res = await fetch("https://up-study-server-side.vercel.app/api/comments", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

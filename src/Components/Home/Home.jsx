@@ -8,7 +8,7 @@ import CategoryArticles from '../Outlet/CategoryArticles';
 
 const Home = () => {
 
-  const articlesPromise = fetch('http://localhost:3000/articles').then(res => res.json())
+  const articlesPromise = fetch('https://up-study-server-side.vercel.app/articles').then(res => res.json())
   
   return (
     <div>

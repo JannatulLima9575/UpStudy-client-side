@@ -8,7 +8,7 @@ const MyArticles = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/api/articles?email=${user.email}`)
+      fetch(`https://up-study-server-side.vercel.app/api/articles?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           setArticles(data);

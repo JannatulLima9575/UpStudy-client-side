@@ -11,7 +11,7 @@ const ArticleDetails = () => {
 
   useEffect(() => {
     // Fetch article details
-    fetch(`http://localhost:3000/api/articles/${id}`)
+    fetch(`https://up-study-server-side.vercel.app/api/articles/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setArticle(data);
@@ -25,7 +25,7 @@ const ArticleDetails = () => {
 
   const fetchCommentsCount = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/api/comments`);
+      const res = await fetch(`https://up-study-server-side.vercel.app/api/comments`);
       const comments = await res.json();
       const count = comments.filter((c) => c.articleId === id).length;
       setCommentsCount(count);
@@ -37,7 +37,7 @@ const ArticleDetails = () => {
   // Like button handler
   const handleLike = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/api/articles/${id}/like`, {
+      const res = await fetch(`https://up-study-server-side.vercel.app/api/articles/${id}/like`, {
         method: "PATCH",
       });
       const data = await res.json();

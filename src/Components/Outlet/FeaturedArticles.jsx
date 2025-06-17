@@ -6,7 +6,7 @@ const FeaturedArticles = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/featured")
+    fetch("https://up-study-server-side.vercel.app/api/featured")
       .then((res) => res.json())
       .then((data) => {
         setArticles(data);

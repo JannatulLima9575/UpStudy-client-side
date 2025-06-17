@@ -6,14 +6,14 @@ const AllArticles = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/articles")
+    fetch("https://up-study-server-side.vercel.app/api/articles")
       .then((res) => res.json())
       .then((data) => {
         setArticles(data);
         setLoading(false);
       })
-      .catch((err) => {
-        console.error("Error loading articles:", err);
+      .catch((error) => {
+        console.error("Error loading articles:", error);
         setLoading(false);
       });
   }, []);

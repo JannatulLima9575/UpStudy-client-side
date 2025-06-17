@@ -6,7 +6,7 @@ const CategoriesList = () => {
 
   // Fetch categories from the server
   useEffect(() => {
-    fetch("http://localhost:3000/api/categories")
+    fetch("https://up-study-server-side.vercel.app/api/categories")
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((err) => console.error("Failed to load categories", err));

@@ -2,7 +2,7 @@ import React from "react";
 
 const CommentItem = ({ comment, onCommentDeleted, onLiked }) => {
   const handleLike = async () => {
-    await fetch(`http://localhost:3000/api/comments/${comment._id}/like`, {
+    await fetch(`https://up-study-server-side.vercel.app/api/comments/${comment._id}/like`, {
       method: "PATCH",
     });
     onLiked();
@@ -11,7 +11,7 @@ const CommentItem = ({ comment, onCommentDeleted, onLiked }) => {
   const handleDelete = async () => {
     const confirm = window.confirm("Are you sure to delete?");
     if (!confirm) return;
-    await fetch(`http://localhost:3000/api/comments/${comment._id}`, {
+    await fetch(`https://up-study-server-side.vercel.app/api/comments/${comment._id}`, {
       method: "DELETE",
     });
     onCommentDeleted();

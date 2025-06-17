@@ -5,7 +5,7 @@ const CommentList = ({ articleId }) => {
   const [comments, setComments] = useState([]);
 
   const fetchComments = async () => {
-    const res = await fetch(`http://localhost:3000/api/comments?articleId=${articleId}`);
+    const res = await fetch(`https://up-study-server-side.vercel.app/api/comments?articleId=${articleId}`);
     const data = await res.json();
     setComments(data);
   };

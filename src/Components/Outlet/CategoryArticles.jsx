@@ -7,7 +7,7 @@ const CategoryArticles = () => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/articles?category=${categoryName}`)
+    fetch(`https://up-study-server-side.vercel.app/api/articles?category=${categoryName}`)
       .then(res => res.json())
       .then(data => setArticles(data));
   }, [categoryName]);
