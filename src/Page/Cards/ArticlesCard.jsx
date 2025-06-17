@@ -45,7 +45,7 @@ const ArticlesCard = ({ article }) => {
 
         {/* Read More Button */}
         <Link
-          to={`/articles/${_id}`} 
+          to={`/articles/${_id}`}
           className="mt-4 text-blue-600 font-semibold hover:underline transition duration-200 inline-block"
         >
           Read More →

@@ -8,7 +8,7 @@ const CommentForm = ({ articleId, onCommentAdded }) => {
 
     const comment = {
       articleId,
-      userId: "123", // তোমার auth থেকে এভাবে পাঠাবে
+      userId: "123",
       userName: "Demo User",
       userPhoto: "https://i.pravatar.cc/150?img=12",
       commentText,
@@ -18,14 +18,14 @@ const CommentForm = ({ articleId, onCommentAdded }) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // Authorization: `Bearer ${localStorage.getItem("access-token")}` // যদি প্রোটেক্টেড হয়
+        
       },
       body: JSON.stringify(comment),
     });
 
     if (res.ok) {
       setCommentText("");
-      if (onCommentAdded) onCommentAdded(); // রিফ্রেশ
+      if (onCommentAdded) onCommentAdded(); 
     }
   };
 
