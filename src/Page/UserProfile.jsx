@@ -10,14 +10,14 @@ const UserProfile = () => {
 
   useEffect(() => {
     if (user?.email) {
-      axios.get(`/api/users/${user.email}`).then((res) => {
+      axios.get(`https://up-study-server-side.vercel.app/api/users/${user.email}`).then((res) => {
         setProfile(res.data);
       });
-      axios.get(`/api/articles?email=${user.email}`).then((res) => {
+      axios.get(`https://up-study-server-side.vercel.app/api/articles?email=${user.email}`).then((res) => {
         // console.log("📦 Articles API response:", res.data);
         setArticles(res.data);
       });
-      axios.get(`/api/user-comments?email=${user.email}`).then((res) => {
+      axios.get(`https://up-study-server-side.vercel.app/api/user-comments?email=${user.email}`).then((res) => {
         setComments(res.data);
       });
     }

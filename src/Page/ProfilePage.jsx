@@ -9,49 +9,96 @@ const ProfilePage = () => {
 
   useEffect(() => {
     if (user?.email) {
+      //  Load user info
       fetch(`/api/users/${user.email}`)
         .then(res => res.json())
-        .then(data => setUserInfo(data));
+        .then(data => {
+          setUserInfo(data);
+        })
+        .catch(err => console.error("User info fetch error:", err));
 
+      // Load articles
       fetch(`/api/articles?email=${user.email}`)
         .then(res => res.json())
-        .then(data => setArticles(data));
+        .then(data => {
+          console.log("✅ Articles API response:", data);
 
+          if (Array.isArray(data)) {
+            setArticles(data);
+          } else if (Array.isArray(data.articles)) {
+            setArticles(data.articles);
+          } else {
+            setArticles([]);
+          }
+        })
+        .catch(err => {
+          console.error("Articles fetch error:", err);
+          setArticles([]);
+        });
+
+      // ✅ Load comments
       fetch(`/api/user-comments?email=${user.email}`)
         .then(res => res.json())
-        .then(data => setComments(data));
+        .then(data => {
+          if (Array.isArray(data)) {
+            setComments(data);
+          } else if (Array.isArray(data.comments)) {
+            setComments(data.comments);
+          } else {
+            setComments([]);
+          }
+        })
+        .catch(err => {
+          console.error("Comments fetch error:", err);
+          setComments([]);
+        });
     }
   }, [user]);
 
   return (
-    <div className="max-w-5xl mx-auto pt-24 p-6">
+    <div className="max-w-5xl mx-auto pt-24 px-4">
+      {/* 🧑 User Info */}
       <div className="text-center">
-        <img src={userInfo.photoURL} alt="Profile" className="w-24 h-24 rounded-full mx-auto" />
-        <h2 className="text-xl font-bold mt-3">{userInfo.name}</h2>
-        <p className="text-gray-500">{userInfo.email}</p>
+        <img
+          src={userInfo.photoURL || user?.photoURL}
+          alt="Profile"
+          className="w-24 h-24 rounded-full mx-auto"
+        />
+        <h2 className="text-xl font-bold mt-3">{userInfo.name || user?.displayName}</h2>
+        <p className="text-gray-500">{userInfo.email || user?.email}</p>
       </div>
 
+      {/* 📚 Articles Section */}
       <div className="mt-10">
         <h3 className="text-2xl font-semibold mb-4">My Articles</h3>
-        <ul className="space-y-2">
-          {articles.map(article => (
-            <li key={article._id} className="p-4 border rounded">
-              <h4 className="font-bold">{article.title}</h4>
-              <p className="text-sm text-gray-500">{article.category}</p>
-            </li>
-          ))}
-        </ul>
+        {Array.isArray(articles) && articles.length > 0 ? (
+          <ul className="space-y-2">
+            {articles.map((article) => (
+              <li key={article._id || article.id} className="p-4 border rounded">
+                <h4 className="font-bold">{article.title}</h4>
+                <p className="text-sm text-gray-500">{article.category}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-gray-500">No articles found.</p>
+        )}
       </div>
 
+      {/* 💬 Comments Section */}
       <div className="mt-10">
         <h3 className="text-2xl font-semibold mb-4">My Comments</h3>
-        <ul className="space-y-2">
-          {comments.map(comment => (
-            <li key={comment._id} className="p-4 border rounded">
-              <p className="text-gray-600">{comment.commentText}</p>
-            </li>
-          ))}
-        </ul>
+        {Array.isArray(comments) && comments.length > 0 ? (
+          <ul className="space-y-2">
+            {comments.map((comment) => (
+              <li key={comment._id || comment.id} className="p-4 border rounded">
+                <p className="text-gray-600">{comment.comment || comment.commentText}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-gray-500">No comments found.</p>
+        )}
       </div>
     </div>
   );
