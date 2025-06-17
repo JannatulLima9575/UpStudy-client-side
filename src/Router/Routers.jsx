@@ -14,6 +14,7 @@ import PostArticle from "../Page/PostArticle";
 import MyArticles from "../Page/MyArticles";
 import PrivateRoute from "./PrivateRoute";
 import ForgotPassword from "../Page/ForgotPassword";
+import UserProfile from "../Page/UserProfile";
 
 const Routers = createBrowserRouter([
   {
@@ -37,6 +38,14 @@ const Routers = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyArticles />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/profile",
+        element: (
+          <PrivateRoute>
+            <UserProfile />
           </PrivateRoute>
         ),
       },

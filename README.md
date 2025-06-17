@@ -1,6 +1,6 @@
 # 📘 UpStudy – A Knowledge Sharing Platform
 
-**Live Site:** [https://eduverse.web.app](https://eduverse.web.app)
+**Live Site:** [https://eduverse-a8eed.web.app/](https://eduverse-a8eed.web.app)
 
 ## 🧠 Project Purpose
 
@@ -10,7 +10,7 @@ EduVerse is a knowledge-sharing platform built for students to share articles, i
 
 ## 🚀 Live Preview
 
-🌐 **Live URL:** [https://eduverse.web.app](https://eduverse.web.app)
+🌐 **Live URL:** [https://eduverse-a8eed.web.app/](https://eduverse-a8eed.web.app)
 
 ---
 
