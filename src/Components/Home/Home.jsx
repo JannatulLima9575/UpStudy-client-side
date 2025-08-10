@@ -8,7 +8,6 @@ import EventsSection from '../Outlet/EventsSection';
 import Testimonials from '../Outlet/Testimonials';
 
 const Home = () => {
-
   const articlesPromise = fetch('https://up-study-server-side.vercel.app/api/articles').then(res => res.json())
   
   return (

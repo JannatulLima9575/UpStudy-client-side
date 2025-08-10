@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <div>
-      {/* Overlay for mobile menu */}
+      {/* mobile menu */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-40 z-40"
