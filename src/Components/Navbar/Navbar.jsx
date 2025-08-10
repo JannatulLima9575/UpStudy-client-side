@@ -40,7 +40,7 @@ const Navbar = () => {
         <div className="px-4 py-3 flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold bg-black rounded-xl p-1">
-            <img src={NavbarLogo} alt="EduVerse Logo" className="lg:h-10" />
+            <img src={NavbarLogo} alt="EduVerse Logo" referrerPolicy="no-referrer" className="lg:h-10" />
           </Link>
 
           {/* Desktop Nav */}
@@ -65,6 +65,7 @@ const Navbar = () => {
                     <img
                       src={user.photoURL || "https://i.ibb.co/zf4Bxpw/avatar.png"}
                       alt={user.displayName || "User"}
+                      referrerPolicy="no-referrer"
                     />
                   </div>
                 </div>

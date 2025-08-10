@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import CommentForm from "../comments/CommentForm";
 import CommentList from "../comments/CommentList";
+import { useFetchComments } from "../comments/commentsHandler";
 
 const ArticleDetails = () => {
   const { id } = useParams();
   const [article, setArticle] = useState(null);
   const [likes, setLikes] = useState(0);
   const [commentsCount, setCommentsCount] = useState(0);
+  const { comments, fetchComments } = useFetchComments();
 
   useEffect(() => {
     // Fetch article details
@@ -19,27 +21,23 @@ const ArticleDetails = () => {
       })
       .catch((err) => console.error("Failed to fetch article", err));
 
-    // Fetch comments count
-    fetchCommentsCount();
+
   }, [id]);
 
-  const fetchCommentsCount = async () => {
-    try {
-      const res = await fetch(`https://up-study-server-side.vercel.app/api/comments`);
-      const comments = await res.json();
-      const count = comments.filter((c) => c.articleId === id).length;
-      setCommentsCount(count);
-    } catch (err) {
-      console.error("Failed to fetch comments", err);
-    }
-  };
+  useEffect(()=>{
+      setCommentsCount(comments.length);
+  },[comments])
+
 
   // Like button handler
   const handleLike = async () => {
     try {
-      const res = await fetch(`https://up-study-server-side.vercel.app/api/articles/${id}/like`, {
-        method: "PATCH",
-      });
+      const res = await fetch(
+        `https://up-study-server-side.vercel.app/api/articles/${id}/like`,
+        {
+          method: "PATCH",
+        }
+      );
       const data = await res.json();
       setLikes(data.likes);
     } catch (err) {
@@ -48,6 +46,7 @@ const ArticleDetails = () => {
   };
 
   if (!article) return <p className="text-center pt-28">Loading...</p>;
+  console.log(article);
 
   return (
     <div className="max-w-4xl mx-auto px-4 pt-28 py-6">
@@ -64,7 +63,7 @@ const ArticleDetails = () => {
         <div>
           <p className="font-medium text-gray-800">{article.author_name}</p>
           <p className="text-sm text-gray-500">
-            {new Date(article.date).toLocaleDateString()}
+            {new Date(article.createdAt).toLocaleDateString()}
           </p>
         </div>
       </div>
@@ -111,8 +110,8 @@ const ArticleDetails = () => {
       <hr className="my-6" />
 
       <h2 className="text-2xl font-semibold mb-4">Comments</h2>
-      <CommentForm articleId={id} onCommentAdded={fetchCommentsCount} />
-      <CommentList articleId={id} />
+      <CommentForm articleId={id} fetchComments={fetchComments} />
+      <CommentList comments={comments} fetchComments={fetchComments} articleId={id} />
     </div>
   );
 };

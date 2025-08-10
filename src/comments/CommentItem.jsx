@@ -18,7 +18,7 @@ const CommentItem = ({ comment, onCommentDeleted, onLiked }) => {
   };
 
   return (
-    <div className="border p-3 rounded bg-gray-50">
+    <div className="p-3 rounded bg-gray-50">
       <div className="flex items-center gap-2 mb-1">
         <img src={comment.userPhoto} className="w-8 h-8 rounded-full" alt="User" />
         <strong>{comment.userName}</strong>

@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import CommentItem from "./CommentItem";
 
-const CommentList = ({ articleId }) => {
-  const [comments, setComments] = useState([]);
 
-  const fetchComments = async () => {
-    const res = await fetch(`https://up-study-server-side.vercel.app/api/comments?articleId=${articleId}`);
-    const data = await res.json();
-    setComments(data);
-  };
+const CommentList = ({ articleId, comments, fetchComments}) => {
+  
+  useEffect(() => {
+    fetchComments(articleId);
+  }, [articleId]);
 
   useEffect(() => {
-    fetchComments();
-  }, [articleId]);
+    console.log("Updated comments:", comments);
+  }, [comments]);
 
   return (
     <div className="mt-6 space-y-4">
@@ -29,4 +27,4 @@ const CommentList = ({ articleId }) => {
   );
 };
 
-export default CommentList;
+export default CommentList; 

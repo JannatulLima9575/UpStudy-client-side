@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const CommentForm = ({ articleId, onCommentAdded }) => {
+const CommentForm = ({ articleId, fetchComments }) => {
   const [commentText, setCommentText] = useState("");
 
   const handleSubmit = async (e) => {
@@ -25,7 +25,7 @@ const CommentForm = ({ articleId, onCommentAdded }) => {
 
     if (res.ok) {
       setCommentText("");
-      if (onCommentAdded) onCommentAdded(); 
+      fetchComments(articleId); 
     }
   };
 

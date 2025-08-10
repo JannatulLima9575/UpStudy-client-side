@@ -3,15 +3,20 @@ import { useParams } from "react-router";
 import ArticlesCard from "../../Page/Cards/ArticlesCard";
 
 const CategoryArticles = () => {
-  const { categoryName } = useParams();
+  const { categoryName } = useParams(); 
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     fetch(`https://up-study-server-side.vercel.app/api/articles?category=${categoryName}`)
       .then(res => res.json())
-      .then(data => setArticles(data));
-  }, [categoryName]);
+      .then(data =>{ setArticles(data);console.log(data)});
 
+  }, [categoryName]);
+/* 
+const fn=()=>{
+
+  }
+ */
   return (
     <div className="my-8 pt-28 max-w-7xl mx-auto">
       <div className="">

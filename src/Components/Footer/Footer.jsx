@@ -60,11 +60,44 @@ const Footer = () => {
           </div>
         </div>
 
+
+         {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-semibold text-emerald-500 mb-2">Quick Links</h3>
+            <ul className="space-y-3 text-sm pt-3">
+              <li><a href="/" className="hover:underline">Home</a></li>
+              <li><a href="/articles" className="hover:underline">All Articles</a></li>
+              <li><a href="/post-article" className="hover:underline">Post Articles</a></li>
+              <li><a href="/login" className="hover:underline">Login</a></li>
+            </ul>
+          </div>
+
+          {/* About Us */}
+          <div>
+            <h3 className="text-lg font-semibold text-emerald-500 mb-2">About Us</h3>
+            <ul className="space-y-3 text-sm pt-3">
+              <li><a href="/about" className="hover:underline">Our Story</a></li>
+              <li><a href="/team" className="hover:underline">Team</a></li>
+              <li><a href="/mission" className="hover:underline">Our Mission</a></li>
+              <li><a href="/partners" className="hover:underline">Partners</a></li>
+            </ul>
+          </div>
+
+          {/* Support */}
+          <div>
+            <h3 className="text-lg font-semibold text-emerald-500 mb-2">Support</h3>
+            <ul className="space-y-3 text-sm pt-3">
+              <li><a href="/faq" className="hover:underline">FAQs</a></li>
+              <li><a href="/help" className="hover:underline">Help Center</a></li>
+              <li><a href="/feedback" className="hover:underline">Send Feedback</a></li>
+            </ul>
+          </div>
+
         {/* Links */}
         <div className="flex gap-10">
           <div>
-            <h3 className="font-semibold mb-4">Pages</h3>
-            <ul className="space-y-3 text-sm">
+            <h3 className="font-semibold mb-4 text-emerald-500">Pages</h3>
+            <ul className="space-y-3 text-sm pt-3">
               <li>
                 <Link to="/about" className="link link-hover">
                   About Us

@@ -7,7 +7,8 @@ const ArticlesCard = ({ article }) => {
     title,
     content,
     author_name,
-    author_photo,
+    authorName,
+    authorPhoto,
     thumbnail,
     createdAt,
   } = article;
@@ -32,11 +33,12 @@ const ArticlesCard = ({ article }) => {
         <div className="flex items-center justify-between text-sm mt-auto">
           <div className="flex items-center gap-2">
             <img
-              src={author_photo || "https://i.ibb.co/YyW9qfY/default-user.png"}
+              src={authorPhoto || "https://i.ibb.co/YyW9qfY/default-user.png"}
               alt={author_name}
+              referrerPolicy="no-referrer"
               className="w-8 h-8 rounded-full object-cover"
             />
-            <span className="font-medium">{author_name}</span>
+            <span className="font-medium">{authorName}</span>
           </div>
           <span className="text-gray-500 dark:text-gray-400">
             {new Date(createdAt).toLocaleDateString()}

@@ -4,11 +4,12 @@ import TopContributors from '../topContributors/topContributors';
 import PopularTopics from '../PopularTopics/PopularTopics';
 import FeaturedArticles from '../Outlet/FeaturedArticles';
 import CategoriesList from '../Outlet/CategoriesList';
-import CategoryArticles from '../Outlet/CategoryArticles';
+import EventsSection from '../Outlet/EventsSection';
+import Testimonials from '../Outlet/Testimonials';
 
 const Home = () => {
 
-  const articlesPromise = fetch('https://up-study-server-side.vercel.app/articles').then(res => res.json())
+  const articlesPromise = fetch('https://up-study-server-side.vercel.app/api/articles').then(res => res.json())
   
   return (
     <div>
@@ -17,6 +18,8 @@ const Home = () => {
       <CategoriesList/>
       <TopContributors/>
       <PopularTopics/>
+      <Testimonials/>
+      <EventsSection/>
     </div>
   );
 };

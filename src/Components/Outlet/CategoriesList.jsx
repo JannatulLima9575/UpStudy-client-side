@@ -13,12 +13,12 @@ const CategoriesList = () => {
   }, []);
 
   return (
-    <div className="my-6">
-      <h2 className="text-2xl text-center font-bold mb-4">Categories</h2>
-      <p className="text-center text-gray-600 mb-4">
+    <div className="my-6 bg-base-200 py-16">
+      <h2 className="text-3xl text-center font-bold mb-4">Categories</h2>
+      <p className="text-center text-xl text-gray-600 mb-4">
         Click a category to explore articles related to that topic.
       </p>
-      <div className="flex flex-wrap justify-center gap-3">
+      <div className="flex flex-wrap justify-center gap-3 pt-7">
         {categories.length === 0 ? (
           <p className="text-gray-500">No categories found.</p>
         ) : (
