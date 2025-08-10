@@ -12,11 +12,7 @@ const CategoryArticles = () => {
       .then(data =>{ setArticles(data);console.log(data)});
 
   }, [categoryName]);
-/* 
-const fn=()=>{
-
-  }
- */
+  
   return (
     <div className="my-8 pt-28 max-w-7xl mx-auto">
       <div className="">
