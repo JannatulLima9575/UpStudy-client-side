@@ -12,11 +12,11 @@ const CategoryArticles = () => {
       .then(data =>{ setArticles(data);console.log(data)});
 
   }, [categoryName]);
-  
+
   return (
     <div className="my-8 pt-28 max-w-7xl mx-auto">
       <div className="">
-      <h2 className="text-2xl font-bold mb-6">
+      <h2 className="text-4xl font-bold mb-6">
         Articles in "{categoryName}" Category
       </h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -8,15 +8,15 @@ const PatientSafety = () => {
         {/* Left Side - Text */}
         <div>
           <p className="text-sm tracking-widest text-gray-500">
-            WORLD HEALTH ORGANIZATION
+             KNOWLEDGE SHARING PLATFORM
           </p>
           <h1 className="text-4xl font-bold text-blue-600 mt-2">
-            Patient Safety
+             Empowering Knowledge
           </h1>
-          <p className="mt-4 text-gray-700 leading-relaxed">
-            Focusing on patient safety and health care systems linkages to
-            eliminate preventable harm to improve patient safety and health
-            outcomes at the point of care.
+          <p className="mt-4 text-gray-700 text-xl leading-relaxed">
+            Sharing valuable insights, best practices, real-world experiences, and 
+            inspiring stories to help individuals and communities grow through 
+            collaboration and learning.
           </p>
 
           {/* Link Button */}
@@ -45,7 +45,7 @@ const PatientSafety = () => {
         {/* Right Side - Image */}
         <div className="flex justify-center">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Nurse_with_patient.jpg/640px-Nurse_with_patient.jpg"
+            src="https://i.ibb.co.com/BHXwFD4C/image.png"
             alt="Patient Safety"
             className="rounded-md shadow-lg max-w-full"
           />

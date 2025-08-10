@@ -2,16 +2,16 @@ import React from "react";
 
 const Sharing = () => {
   return (
-    <div className="bg-gray-100 flex justify-center items-center min-h-screen">
-      <div className="text-center p-6">
+    <div className="bg-gray-100 flex justify-center items-center py-6">
+      <div className="text-center p-8">
         {/* Small Heading */}
-        <p className="text-sm tracking-widest text-gray-500">WE INVITE YOU TO</p>
+        <p className="text-xl tracking-widest text-gray-500">WE INVITE YOU TO</p>
 
         {/* Main Heading */}
-        <h1 className="text-4xl font-bold text-blue-600 mt-2">start sharing</h1>
+        <h1 className="text-4xl font-bold text-blue-600 mt-2 mb-2">start sharing</h1>
 
         {/* Description */}
-        <p className="mt-3 text-gray-700 max-w-2xl mx-auto">
+        <p className="mt-3 text-xl text-gray-700 max-w-2xl mx-auto">
           Patient Safety Improvements, Experiences, Best Practices and Patient Stories with the
           Global Patient Safety Community today
         </p>

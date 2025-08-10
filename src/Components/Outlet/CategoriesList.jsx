@@ -14,7 +14,7 @@ const CategoriesList = () => {
 
   return (
     <div className="my-6 bg-base-200 py-16">
-      <h2 className="text-3xl text-center font-bold mb-4">Categories</h2>
+      <h2 className="text-4xl text-center font-bold mb-4">Categories</h2>
       <p className="text-center text-xl text-gray-600 mb-4">
         Click a category to explore articles related to that topic.
       </p>

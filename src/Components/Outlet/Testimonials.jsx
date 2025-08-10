@@ -4,7 +4,7 @@ const Testimonials = () => {
   return (
     <section className="bg-edu-bg text-edu-primary py-12 px-4">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center">
+        <h2 className="text-4xl font-bold mb-8 text-center">
           Success Stories
         </h2>
 
