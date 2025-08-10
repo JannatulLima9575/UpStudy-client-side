@@ -18,7 +18,6 @@ const Banner = () => {
         backgroundColor: "rgba(0,0,0,0.6)",
       }}
     >
-      {/* Decorative Lottie Animations */}
       {/* Bottom Left */}
       <div className="hidden lg:block absolute bottom-20 left-32 w-36 opacity-70">
         <Lottie animationData={hero1} loop={true} />
