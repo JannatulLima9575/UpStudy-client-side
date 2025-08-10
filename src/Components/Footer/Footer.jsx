@@ -21,7 +21,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Social Icons - moved down with margin-top auto */}
+          {/* Social Icons */}
           <div className="pt-6">
             <div className="flex space-x-4 text-lg">
               <a
