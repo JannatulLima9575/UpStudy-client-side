@@ -6,6 +6,8 @@ import FeaturedArticles from '../Outlet/FeaturedArticles';
 import CategoriesList from '../Outlet/CategoriesList';
 import EventsSection from '../Outlet/EventsSection';
 import Testimonials from '../Outlet/Testimonials';
+import Sharing from '../Outlet/Sharing';
+import PatientSafety from '../Outlet/PatientSafety';
 
 const Home = () => {
   const articlesPromise = fetch('https://up-study-server-side.vercel.app/api/articles').then(res => res.json())
@@ -18,6 +20,8 @@ const Home = () => {
       <TopContributors/>
       <PopularTopics/>
       <Testimonials/>
+      <Sharing/>
+      <PatientSafety/>
       <EventsSection/>
     </div>
   );
